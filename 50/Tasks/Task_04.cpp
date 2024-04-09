@@ -32,6 +32,7 @@ void PrintResult(stInfo info)
         cout << "\n Rejected"<< endl;
 
 }
+
 int main()
 {
     PrintResult(ReadInfo());
