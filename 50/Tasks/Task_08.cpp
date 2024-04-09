@@ -1,28 +1,38 @@
 #include <iostream>
 using namespace std; 
 
-short setMark(short &mark)
+enum enPassFail {
+    Paas = 1,
+    Fail = 2
+};
+
+int ReadMark()
 {
-    cout << "Please Enter Your Marck : " ;
-    cin >> mark;
-    return mark; 
+    int Mark;
+
+    cout << "Please Enter Your Marck : " << endl;
+    cin >> Mark;
+    return Mark; 
 }
 
-void getResult( short mark)
+bool CheckMark(int mark)
 {
     if(mark >= 50)
-    {
-        cout << "You Pass." << endl;
-    }
+        return enPassFail::Paas;
     else
-    {
+        return enPassFail::Fail; 
+}
+
+void PrintResult( int mark)
+{
+    if(CheckMark(mark) == enPassFail::Paas)
+        cout << "You Pass." << endl;
+    else
         cout << "You Fail." << endl;
-    }
 }
 
 int main()
 {
-    short Mark = setMark(Mark);
-    getResult(Mark);
+    PrintResult(ReadMark());
     return 0;
 }
