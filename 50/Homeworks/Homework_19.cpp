@@ -27,12 +27,13 @@ short Input()
     while (counter < 5)
     {
         num = ReadNum();
-        counter++;
         if(num >= 50)
         {
             continue;
         }
         sum = SumNum(num,sum);
+        counter++;
+
     }
     
     return sum;
