@@ -20,7 +20,29 @@ short SumNum(short &num, short &sum)
     return sum + num;
 }
 
+
+short Input()
+{
+    short sum = 0, num, counter = 0;
+    while (counter < 5)
+    {
+        num = ReadNum();
+        counter++;
+        if(num >= 50)
+        {
+            continue;
+        }
+        sum = SumNum(num,sum);
+    }
+    
+    return sum;
+}
+
+
+
 int main()
 {
+    short Sum = Input();
+    cout << Sum;
     return 0;
 }
