@@ -27,8 +27,9 @@ short Input()
     while (counter < 5)
     {
         num = ReadNum();
-        if(num >= 50)
+        if(num > 50)
         {
+            cout << "The Number is grater than  50, and won't be calculated."<< endl;
             continue;
         }
         sum = SumNum(num,sum);
