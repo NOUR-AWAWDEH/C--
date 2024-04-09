@@ -1,18 +1,38 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
+
+void ReadNumbers(int &mark1, int &mark2, int &mark3)
+{
+    cout << "Please Enter your Number 1 : " << endl;
+    cin >> num1;
+
+    cout << "Please Enter your Number 2 : " << endl;
+    cin >> num2;
+
+    cout << "Please Enter your Number 3 : " << endl;
+    cin >> num3;
+}
+
+int SumOf3Marks(int mark1,int mark2, int mark3)
+{
+    return num1 + num2 + num3;
+}
+
+float CalculateAverage(int mark1, int mark2, int mark3)
+{
+    return (float)SumOf3Marks(mark1, mark2, mark3) / 3;
+}
+
+void PrintResult(int total)
+{
+    cout << "\nThe Total Sum of Numbers is: " << total << endl;
+}
 
 int main()
 {
-    short Mark1, Mark2, Mark3;
-    cout << "Please Write The follwing Marks : " << endl;
-    cout << "Mark Number 1 : ";
-    cin >> Mark1;
-    cout << "Mark Number 2 : ";
-    cin >> Mark2;
-    cout << "Mark Number 3 : ";
-    cin >> Mark3;
+    int Mark1, Mark2, Mark3;
+    ReadNumbers(Mark1, Mark2, Mark3);
+    PrintResult(SumOf3Marks(Mark1, Mark2, Mark3));
 
-    float Avarage = (Mark1 + Mark2 + Mark3 ) /3;
-    cout << "The Avarage Marks is : " << Avarage <<  "%" <<endl <<endl;
     return 0;
 }
