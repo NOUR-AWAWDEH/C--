@@ -1,16 +1,25 @@
 #include<iostream>
 #include<string>
 using namespace std;
-void MyName()
+
+string ReadName()
 {
     string Name;
-    cout << "Please Enter Your Name : ";
+
+    cout << "Please enter your name? "<< endl;
     getline(cin,Name);
-    cout << Name << endl;
+    return Name;
 }
+
+void PrintName(string name)
+{
+
+    cout << "Your name is : "<< name << endl;
+}
+
 
 int main()
 {
-    MyName();
+    PrintName(ReadName());
     return 0;
 }

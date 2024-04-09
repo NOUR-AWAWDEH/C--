@@ -1,39 +1,39 @@
 #include<iostream>
 using namespace std;
 
-bool  EnterDriverLicense(bool &driverLicense)
+struct stInfo
 {
-    cout << "Please Enter => (0/1) if you have or have not DriverLicense : ";
-    cin >> driverLicense;
-    return driverLicense;
+     int Age;
+     bool HasDrivingLicense;
+};
+
+stInfo ReadInfo()
+{
+    stInfo Info;
+
+    cout << "please Enter Your Age? " << endl;
+    cin >> Info.Age;
+    cout << "Do you have driver License? " << endl;
+    cin >> Info.HasDrivingLicense;
+
+    return Info;
 }
 
-short EnterAge(short &age)
+bool IsAccepted(stInfo info)
 {
-    cout << "Please Enter The Age : ";
-    cin >> age;
-    return age;
+    return (info.Age > 21 && info.HasDrivingLicense);
 }
 
-void HiredDecision(short age, bool driverLicense)
+void PrintResult(stInfo info)
 {
-    if(age > 21 && driverLicense == 1)
-    {
-        cout << "Hired" << endl;
-    }
+    if(IsAccepted(info))
+        cout << "\n Hired" << endl;
     else
-    {
-        cout << "Rejecteed" << endl;
-    }
+        cout << "\n Rejected"<< endl;
+
 }
-
 int main()
-{    
-    
-    short Age = EnterAge(Age);
-    bool DriverLicense = EnterDriverLicense(DriverLicense);
-    HiredDecision(Age, DriverLicense);
-
+{
+    PrintResult(ReadInfo());
     return 0;
 }
-
