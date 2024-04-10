@@ -1,29 +1,29 @@
 #include <iostream>
 using namespace std;
-void SwapNumbers(short &Number1, short &Number2)
+void SwapNumbers(int& num1, int& num2)
 {
-    short Temp = Number1;
-    Number1 = Number2;
-    Number2 = Temp;
+    int Temp = num1;
+    num1 = num2;
+    num2 = Temp;
 }
 
-void BeforeSwaping(short Number1, short Number2)
+void PrintNumbers(int num1, int num2)
 {
-    cout << "Numbers Before Swapping : " << endl;
-    cout << Number1 << endl;
-    cout << Number2 << endl << endl;
+    cout << "Number 1 : "<< num1 << endl;
+    cout << "Number 2 : "<< num2 << endl;
 }
 
-short ReadNumber()
+void ReadNumbers( int& num1, int& num2)
 {
-    short Num;
-    cout << "Please Enter the Number : ";
-    cin >> Num;
-    cout << endl;
-    return Num;
+    
+    cout << "Please Enter the Number 1: ";
+    cin >> num1;
+    
+    cout << "Please Enter the Number 2: ";
+    cin >> num2;
 }
 
-void AfterSwapping(short Number1, short Number2)
+void AfterSwapping(int Number1, int Number2)
 {
     cout << "Numbers After Swapping : " << endl;
     cout << Number1 << endl;
@@ -32,13 +32,12 @@ void AfterSwapping(short Number1, short Number2)
 
 int main()
 {
-    short Number1, Number2;
-    Number1 = ReadNumber();
-    Number2 = ReadNumber();
+    int Number1, Number2;
+    ReadNumbers(Number1, Number2);
         
-    BeforeSwaping(Number1,Number2);
-    SwapNumbers(Number1,Number2);
-    AfterSwapping(Number1,Number2);
+    PrintNumbers(Number1, Number2);
+    SwapNumbers(Number1, Number2);
+    PrintNumbers(Number1,Number2);
     
     return 0;
 }
