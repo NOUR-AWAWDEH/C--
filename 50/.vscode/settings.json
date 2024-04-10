@@ -60,6 +60,7 @@
     "iostream": "cpp",
     "ostream": "cpp",
     "system_error": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "cmath": "cpp"
   }
 }

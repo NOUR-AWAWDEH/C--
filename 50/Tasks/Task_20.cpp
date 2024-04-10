@@ -3,28 +3,28 @@
 using namespace std;
 
 
-float setSquareArea()
+float ReadSquarSide()
 {
-    float SquareArea;
-    cout << "Pleaes Enter Area value of the squar : " ;
-    cin >> SquareArea;
-    return SquareArea;
+    float SquarSide;
+    cout << "Pleaes Enter the Value of the Squar Side : " ;
+    cin >> SquarSide;
+    return SquarSide;
 }
 
-float setCircleArea(short SquareArea)
+float CircleAreaInscribedInSquare(float squareArea)
 {
-    return ( M_PI * pow(SquareArea,2) ) /  4; 
+    return ( M_PI * pow(squareArea, 2 ) ) /  4; 
 }
 
-void getCircleArea(short CircleArea)
+void PrintResult(float circleArea)
 {
-    cout << "The Circle Area is : " << ceil(CircleArea) << endl;
+    cout << "The Circle Area is : " << circleArea << endl;
 }
 
 int main()
 {
-    short SquareArea = setSquareArea();
-    short CircleArea = setCircleArea(SquareArea); 
-    getCircleArea(CircleArea);
+     
+    PrintResult(CircleAreaInscribedInSquare(ReadSquarSide()));
+
     return 0;
 }

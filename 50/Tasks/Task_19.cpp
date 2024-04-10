@@ -1,31 +1,29 @@
 # include <iostream>
-#include <math.h>
+#include <cmath>
 using namespace std;
 
-short setDiameter()
+float ReadDiameter()
 {
-    short  Diameter;
+    float  Diameter;
     cout << "Please Enter the Diameter Value : ";
     cin >> Diameter;
     return Diameter;
 }
 
-float setArea(short Diameter)
+float CircleAreaByDiameter(float diameter)
 {
-    return ( M_PI * Diameter * Diameter ) / 4 ;
+    float Area = ( pow(diameter, 2) *  M_PI ) / 4 ;
+    return Area;
 }
 
-void getArea(float Area)
+void PrintResult(float area)
 {
-    cout << "The Area of the Circle : " << ceil(Area) << endl;
+    cout << "The Area of the Circle : " << area << endl;
 }
 
 int main()
 {
-   
-    short  Diameter = setDiameter();
-    float Area = setArea(Diameter);
-    getArea(Area);
-    
+   PrintResult(CircleAreaByDiameter(ReadDiameter()));
+       
     return 0;
 }
