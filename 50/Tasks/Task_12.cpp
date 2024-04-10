@@ -29,6 +29,6 @@ int main()
     int Num1 , Num2;
     ReadNumbers(Num1, Num2);
     PrintResults(MaxOf2Numberes(Num1, Num2));
-
+    
     return 0;
 }
