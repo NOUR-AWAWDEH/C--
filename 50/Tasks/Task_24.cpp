@@ -1,28 +1,32 @@
 #include<iostream>
 using namespace std;
 
-short setAge(short &age)
+int ReadAge()
 {
-    cout << "PleaseEnter Your Age : ";
+    int age;
+    cout << "Please Enter Your Age : ";
     cin >> age;
+
     return age;
 }
 
-void getResult(short age)
+bool ValidatedNumberInRange(int number, int from, int to)
 {
-    if(age >= 18 && age <= 45)
-    {
-        cout << "Valid Age";
-    }
+    return (number >= from && number <= to);
+}
+
+void PrintResult(int age)
+{
+    if(ValidatedNumberInRange(age, 18, 45))    
+        cout << age <<" is a Valid Age" << endl;
     else
-    {
-        cout << "Invalid Age";
-    }
+        cout << age <<" is Invalid Age" << endl;
+    
 }
 
 int main()
 {
-    short Age = setAge(Age);
-    getResult(Age);   
+    PrintResult(ReadAge());
+
     return 0;
 }
