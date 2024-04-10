@@ -1,49 +1,52 @@
 #include<iostream>
 using namespace std;
 
-short setMark(short &mark, short num)
-{    
-    cout << "Please Enter The Mark"<< num << " : ";
-    cin >> mark;
-    return mark;
+enum enPassFail{ Pass = 1, Fail =2 }; 
+void ReadMarks(int &mark1, int &mark2, int &mark3)
+{
+    cout << "Please Enter your Mark 1 : " << endl;
+    cin >> mark1;
+
+    cout << "Please Enter your Number 3 : " << endl;
+    cin >> mark2;
+
+    cout << "Please Enter your Mark 2 : " << endl;
+    cin >> mark3;
+
 }
 
-void setMarks(short marks[3])
+int SumOf3Marks(int mark1,int mark2, int mark3)
 {
-    setMark(marks[0],1);
-    setMark(marks[1],2);
-    setMark(marks[2],3);
+    return mark1 + mark2 + mark3;
 }
 
-void getAverage(float average)
+float CalculateAverage(int mark1, int mark2, int mark3)
 {
-    cout << average << endl;;
+    return ((float)SumOf3Marks(mark1, mark2, mark3) / 3);
 }
 
-float setAverage(short marks[3])
+enPassFail CheckAverage(float average)
 {
-    return ( marks[0] + marks[1] + marks[2] ) / 3;
-}
-
-void getResult(float average)
-{
-    if(average >= 50.0f)
-    {
-        cout << "PASS";
-    }
+    if(average >= 50)
+        return enPassFail::Pass;
     else
-    {
-        cout << "FAIL";
-    }
+        return enPassFail::Fail;
+}
+
+void PrintResult(int average)
+{
+    cout << "\nYour Average is : " << average << endl;
+    if(CheckAverage(average) == enPassFail::Pass)
+        cout << "\nYou Passed." << endl;
+    else 
+        cout << "\nYou Failed." << endl;    
 }
 
 int main()
 {
-    short Marks[3];
-    setMarks(Marks);
-    float Average = setAverage(Marks);
-    getAverage(Average);
-    getResult(Average);
+    int Mark1, Mark2, Mark3;
+    ReadMarks(Mark1, Mark2, Mark3);
+    PrintResult(CalculateAverage(Mark1, Mark2, Mark3));
 
     return 0;
 }
