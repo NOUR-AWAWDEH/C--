@@ -1,31 +1,30 @@
 #include <iostream>
 using namespace std;
 
-short getArea(int A, int B)
+void ReadNumbers(float& a, float& b)
 {
-    return A * B;
+    cout << "Please Enter the Value of A : ";
+    cin >> a;
+
+    cout << "Please Enter the Value of B : ";
+    cin >> b;
 }
 
-void DisplayArea(short Area)
+float CalculateRectangleArea(float a, float b)
 {
-    cout << "The Area of the Rectangle is : " << Area << endl;
+    return a * b;
 }
 
-short setValueOfNumber()
+void PrintResult(float area)
 {
-    short num;
-    cout << "Please Enter the Value : ";
-    cin >> num;
-
-    return num;
+    cout << "Rectangle Area is : " << area << endl;
 }
 
 int main()
 {
-    short A = setValueOfNumber();
-    short B = setValueOfNumber();
+    float A ,B;
+    ReadNumbers(A,B);
+    PrintResult(CalculateRectangleArea(A, B));
 
-    short Area = getArea(A,B);
-    DisplayArea(Area); 
     return 0;
 }

@@ -2,28 +2,27 @@
 #include <cmath>
 using namespace std;
 
-short setRadiusValue()
+float ReadRadious()
 {
-    short Radius;
-    cout << "Please Enter the Value of the Circle Radius : ";
+    float Radius;
+    cout << "Please Enter the Value of the Circle Radious : ";
     cin >> Radius;
     return Radius;
 }
 
-float getArea( short Radius)
+float CircleArea( float Radius)
 {
     return M_PI * pow(Radius,2);
 }
 
-void DisplayArea(short Area)
+void PrintResult(float Area)
 {
-    cout << ceil(Area) << endl;
+    cout << "\nThe Circle Area is : " << Area << endl;
 }
 
 int main()
 {
-    short Radius = setRadiusValue();
-    float Area = getArea(Radius);
-    DisplayArea(Area);    
+    PrintResult(CircleArea(ReadRadious()));
+
     return 0;
 }

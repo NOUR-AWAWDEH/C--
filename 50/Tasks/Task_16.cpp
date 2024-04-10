@@ -2,30 +2,30 @@
 #include <cmath>
 using namespace std;
 
-short SetValue()
+void ReadNumbers(float &side, float &diagonal)
 {
-    short num;
-    cout << "Please Enter the Value of Rectangle : ";
-    cin >> num;
-    return num;
+    cout << "Please Enter the Value of the Side Rectangle : ";
+    cin >> side;
+
+    cout << "Please Enter the Value of the Diagonal Rectangle : ";
+    cin >> diagonal;
 }
 
-short getArea(short S, short D)
+float CalculateAreaBySideAndDiagonal(float side, float diagonal )
 {
-    float Area = S * ( sqrt( pow( D, 2) - pow( S, 2) ) );
-    return floor(Area);
+    float  Area = side * (sqrt(pow(diagonal, 2) - pow(side, 2)));
+    return Area;
 }
 
-void DisplayArea(float Area)
+void PrintResult(float area)
 {
-    cout << Area << endl;
+    cout << "The Area Of the Rectangle is : " << area << endl;
 }
 
 int main()
 {
-    short SideOfRectangle = SetValue();
-    short DiagonalOfRectangle = SetValue();
-    float Area = getArea(SideOfRectangle,DiagonalOfRectangle);
-    DisplayArea(Area);
+    float SideOfRectangle, DiagonalOfRectangle;
+    ReadNumbers(SideOfRectangle, DiagonalOfRectangle);
+    PrintResult(CalculateAreaBySideAndDiagonal(SideOfRectangle, DiagonalOfRectangle));
     return 0;
 }

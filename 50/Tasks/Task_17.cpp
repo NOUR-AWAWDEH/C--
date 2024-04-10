@@ -1,16 +1,32 @@
 #include <iostream>
 using namespace std;
+
+void ReadNumbers(float &base, float &high)
+{
+    cout << "Please Enter the Value of the Base Triangle : "<< endl; 
+    cin >> base;
+
+    cout << "Please Enter the Value of the High Triangle : "<< endl;
+    cin >> high;
+}
+
+float TriangleArea(float base, float high)
+{
+    float Area = (base * high) / 2;
+
+    return Area;
+}
+
+void PrintResult(float area)
+{
+    cout << "\nThe Triangle Area Is : " << area << endl; 
+}
+
 int main()
 {
-     short A , H;
-     cout << "Please Enter the Value of A :";
-     cin >> A;
-     cout << "Please Enter the Value of H : ";
-     cin >> H;
-
-    short Area = (A * H)/2;
-
-    cout << "The Area of this Triangle is : " << Area << endl;
-
+    float Base , High;
+    ReadNumbers(Base, High);
+    PrintResult(TriangleArea(Base, High));
+    
     return 0;
 }
