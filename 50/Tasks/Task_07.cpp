@@ -6,9 +6,9 @@ using namespace std;
 int ReadNumber()
 {
     int num ;
-
     cout << "Please Enter the Number : " << endl;
     cin >> num;
+
     return num; 
 }
 
@@ -23,9 +23,9 @@ void PrintResult(int num)
     cout << endl << Result << endl;
 }
 
-
 int main()
 {
     PrintResult(ReadNumber());
+
     return 0;
 }

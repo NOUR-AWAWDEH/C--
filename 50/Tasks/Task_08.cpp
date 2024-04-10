@@ -34,5 +34,6 @@ void PrintResult( int mark)
 int main()
 {
     PrintResult(ReadMark());
+    
     return 0;
 }

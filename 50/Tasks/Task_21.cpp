@@ -2,7 +2,7 @@
 #include<cmath>
 using namespace std;
 
-float setCircumFerence()
+float ReadCircumference()
 {
     float Circumference;
     cout << "Please Enter the Circumference : ";
@@ -10,21 +10,19 @@ float setCircumFerence()
     return Circumference;
 }
 
-float setCirclieArea(float Circumference)
+float CircleAreaByCircumferance(float circumference)
 {
-    return (( pow( Circumference, 2 ) ) / ( 4 * M_PI ));
+    return (( pow( circumference, 2 ) ) / ( 4 * M_PI ));
 }
 
-void getCircleArea(float CirclieArea)
+void PrintResult(float circlieArea)
 {
-    cout << "The Circle Area is " << floor(CirclieArea) << endl;
+    cout << "The Circle Area is " << circlieArea << endl;
 }
 
 int main()
 {    
-    float Circumference = setCircumFerence();
-    float CirclieArea = setCirclieArea(Circumference);
-    getCircleArea(CirclieArea);
-    
+    PrintResult(CircleAreaByCircumferance(ReadCircumference()));
+           
     return 0;
 }

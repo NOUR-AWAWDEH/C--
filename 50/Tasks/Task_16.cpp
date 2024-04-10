@@ -27,5 +27,6 @@ int main()
     float SideOfRectangle, DiagonalOfRectangle;
     ReadNumbers(SideOfRectangle, DiagonalOfRectangle);
     PrintResult(CalculateAreaBySideAndDiagonal(SideOfRectangle, DiagonalOfRectangle));
+    
     return 0;
 }

@@ -13,13 +13,12 @@ string ReadName()
 
 void PrintName(string name)
 {
-
     cout << "Your name is : "<< name << endl;
 }
-
 
 int main()
 {
     PrintName(ReadName());
+
     return 0;
 }

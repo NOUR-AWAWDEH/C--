@@ -2,7 +2,6 @@
 #include <cmath>
 using namespace std;
 
-
 float ReadSquarSide()
 {
     float SquarSide;
@@ -23,7 +22,6 @@ void PrintResult(float circleArea)
 
 int main()
 {
-     
     PrintResult(CircleAreaInscribedInSquare(ReadSquarSide()));
 
     return 0;

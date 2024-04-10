@@ -36,5 +36,6 @@ void PrintResult(stInfo info)
 int main()
 {
     PrintResult(ReadInfo());
+    
     return 0;
 }

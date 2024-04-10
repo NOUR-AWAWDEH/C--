@@ -1,51 +1,42 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-short setA()
+float ReadTriangleData(float &A, float &B, float &C)
 {
-    short A;
-    cout<<"Enter the value of A: ";
-    cin>>A;
-    return A;   
+    cout << "Enter Triangle Side of A : ";
+    cin >> A;
+
+    cout << "Enter Triangle Base of B : ";
+    cin >> B;
+
+    cout << "Enter Triangle Side of C : ";
+    cin >> C;
+   
 }
 
-short setB()
+float CircleAreaByATriangle(float A, float B, float C)
 {
-    short B;
-    cout<<"Enter the value of B: ";
-    cin>>B;
-    return B;
-}
+    float P;
+    P  =  ( A + B + C ) / 2;
 
-short setC()
-{
-    short C;
-    cout<<"Enter the value of C: ";
-    cin>>C;
-    return C;
-}
+    float T;
+    T = (A * B * C ) / (4 * sqrt(P * (P - A) * (P - B) * (P - C)));
 
-float setArea(short A, short B, short C)
-{
-    float P =  ( A + B + C ) / 2;
-    float T = sqrt( P * ( P - A ) * ( P - B ) * ( P - C ) );
-    float R = ( A * B * C );
-    float AreaOfTreangle =  R / ( 4 * T );
-    float Area = M_PI * pow(AreaOfTreangle,2);
+    float Area = M_PI * pow(T, 2);
+
     return Area;
 }
 
-void getArea(float Area)
+void PrintResult(float area)
 {
-    cout << endl << round(Area) << endl;
+    cout << endl << "The Circle Area : "<< area << endl;
 }
+
 int main()
 {
-    short A = setA();
-    short B = setB();
-    short C = setC();
-  
-    float Area = setArea(A,B,C);
-    getArea(Area);
+    float A, B, C; 
+    ReadTriangleData(A, B, C);
+    PrintResult(CircleAreaByATriangle(A, B, C));
+
     return 0;
 }

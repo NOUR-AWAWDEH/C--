@@ -37,5 +37,6 @@ void PrintFullName(string fullName)
 int main()
 {
     PrintFullName(GetFullName(ReadInfo(),true));
+    
     return 0;
 }

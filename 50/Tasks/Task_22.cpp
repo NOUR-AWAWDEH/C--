@@ -1,40 +1,34 @@
 #include <iostream>
 #include <cmath>
-#include <math.h>
-
 using namespace std;
-short GetA()
+
+void ReadTriangleData(float &A, float &B)
 {
-    short A;
+    
     cout << "Please Enter the Value of A : ";
     cin >> A;
-    return A;   
-}
 
-short GetB()
-{
-    short B;
     cout << "Please Enter the Value of B : ";
     cin >> B;   
-    return B;  
 }
-float GetArea(short A, short B)
+
+float CircleAreaByITriangle(float a, float b)
 {
-    float CAreaUP = ((2 * A) - B ); 
-    float CAreaDown = ((2 * A) + B );    
-    float CArea = (CAreaUP / CAreaDown);
-    float Area = ((M_PI * pow(B,2)) / 4 ) * CArea;
+  
+    float Area = M_PI * ( pow(b,2) / 4 ) * ((  2 * a - b ) / (2 * a + b ) );
     return Area;
 }
-void DisplayArea(float Area)
+
+void PrintResult(float area)
 {
-    cout << "Area: " << Area << endl;
+    cout << "\n Circle Area: " << area << endl;
 }
+
 int main()
 {
-    short A = GetA();
-    short B = GetB();
-    float Area = GetArea(A,B);
-    DisplayArea(floor(Area));  
+    float A, B;
+    ReadTriangleData(A, B);
+    PrintResult(CircleAreaByITriangle(A, B));
+
     return 0;
 }
